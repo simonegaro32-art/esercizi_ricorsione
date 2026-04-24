@@ -1,14 +1,10 @@
-def binomial(n, m):
-    # terminale
-    if m == 0 or m == n:
+def binomial(n,m):
+    if m==0 or n==m:
         return 1
-    # non terminale
     else:
-        return (binomial(n-1, m-1) +
-                binomial(n-1, m))
+        return binomial(n-1,m-1)+binomial(n-1,m)
 
-
-if __name__ == '__main__':
-    n = 6
-    m = 3
-    print(binomial(n, m))
+if __name__=="__main__":
+    n=6
+    m=3
+    print(binomial(n,m))

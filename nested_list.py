@@ -1,22 +1,20 @@
 def count_leaf_nodes(input_list):
-    #terminale
-    if len(input_list) == 0:
+    #CONDIZIONE TERMINALE
+    if len(input_list)==0:
         return 0
-    # non terminale
+    #CONDIZIONE NON TERMINALE
     else:
-        counter = 0
+        counter=0
         for element in input_list:
             #check if element is a list
-            # if it is a list, we count its elements
-            # with a recursion
-            if type(element) == list:
-                counter += count_leaf_nodes(element)
-            # else, we add +1
+            #if it is a list, we count its elements
+            if type(element)==list:
+                counter+= count_leaf_nodes(element)
             else:
-                counter += 1
+                counter+=1
+
         return counter
 
-
-if __name__ == '__main__':
+if __name__=="__main__":
     names = ['Adam', ['Bob', ['Chet', 'Cat'], 'Barb', 'Bert'], 'Alex', ['Bea', 'Bill'], 'Ann']
-    print(count_leaf_nodes(names)) #we expect 10
+    print(count_leaf_nodes(names))
